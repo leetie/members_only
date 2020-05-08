@@ -28,7 +28,7 @@ From the Rails app root in terminal:
 ```
 * Set up action_mailer config in development.rb. In this example I am using smpt through Gmail. For this to work, you have to enable access through unsecure apps in your account security settings. 
 
-```
+```ruby
 
         config.action_mailer.default_options = { from: "your_email@gmail.com" }
         config.action_mailer.perform_deliveries = true
