@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<% if user_signed_in? %>
+  <h2><%= "New Post" %></h2><br />
+  <%= render "posts/form"%>
+<% end %>
+
 <h1>Posts</h1>
 
 <table>
@@ -11,15 +16,21 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="container">
+        <tr>
+          <% if user_signed_in? %>
+            <strong><%= User.find(post.user_id).username %></strong><br />
+          <% end %>
+          <strong><%= post.title %><br /></strong>
+          <%= post.body %><br />
+          <% if user_signed_in? %>
+            <% if post.user_id == current_user.id %>
+              <%= link_to 'Edit ', edit_post_path(post) %>
+              <%= link_to ' Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          <% end %>
+        </tr>
+      </div>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
