@@ -4,7 +4,7 @@ This Project was just some practice with authentication for The Odin Project. It
 
 From the Rails app root in terminal:
 
-```
+```shell
 
         touch .env && echo "EMAIL_PASSWORD='your_password'" >> .env && echo "EMAIL_NAME='your_username'" >> .env 
 
@@ -12,7 +12,7 @@ From the Rails app root in terminal:
 
 * Add the .env file with your email and password to gitignore!!!
 
-```
+```shell
 
         echo "/.env" >> .gitignore 
 
@@ -20,7 +20,7 @@ From the Rails app root in terminal:
 
 * Run bundle, fix yarn if it yells at you, and migrate DB
 
-```
+```shell
         bundle install
         yarn install --check-files
         rails db:migrate
@@ -48,7 +48,7 @@ From the Rails app root in terminal:
 
 * In config/initializers/devise.rb
 
-```
+```ruby
 
         config.mailer_sender = 'your_email@example.com'
 
