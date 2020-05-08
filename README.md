@@ -18,6 +18,13 @@ From the Rails app root in terminal:
 
 ```
 
+* Add the 'dotenv-rails' gem to your gemfile
+
+```shell
+        echo "gem 'dotenv-rails' >> Gemfile"
+
+```
+
 * Run bundle, fix yarn if it yells at you, and migrate DB
 
 ```shell
