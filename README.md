@@ -1,9 +1,3 @@
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-
 This Project was just some practice with authentication for The Odin Project. It uses the Devise gem for authentication and renders views based on whether or not users are signed in.
 
 * Instructions for getting mailer to work on your local environment
